@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+
+        <!-- CSS -->
+
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/style2.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons 
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
+        <script type="text/javascript">
+        function validate(){
+       var fname=document.forms["reg"]["form-first-name"].value;
+       var lname=document.forms["reg"]["form-last-name"].value;
+       var mail=document.forms["reg"]["form-email"].value;
+       var pass=document.forms["reg"]["password"].value;
+       var mobile=document.forms["reg"]["form-mobile"].value;
+       var add=document.forms["reg"]["form-address"].value;
+       var apos=mail.indexOf("@");
+      var dotpos=mail.lastIndexOf(".");
+      var maill=mail.length;
+      //first name validation 
+        
+       if(fname === null || fname === '')
+       {
+           alert("PLEASE ENTER THE FIRST NAME");
+           document.forms["reg"]["form-first-name"].focus();
+           return false;
+       }
+       for(var i=0;i<fname.length;i++)
+       {   
+           var value=fname.charAt(i);
+           var cc=value.charCodeAt(0);
+           if((cc>64 && cc <91)||(cc >96 && cc <123))
+           {
+               
+           }
+           else
+           {
+               alert("NAME CAN ONLY BE IN APLPHABET");
+               document.forms["reg"]["form-first-name"].focus();
+               return false;
+           }
+       }
+       
+       // last name validation
+       
+        if(lname === null || lname === '')
+       {
+           alert("PLEASE ENTER THE LAST NAME");
+           document.forms["reg"]["form-last-name"].focus();
+           return false;
+       }
+       for(var i=0;i<lname.length;i++)
+       {   
+           var value=lname.charAt(i);
+           var cc=value.charCodeAt(0);
+           if((cc>64 && cc <91)||(cc >96 && cc <123))
+           {
+               
+           }
+           else
+           {
+               alert("NAME CAN ONLY BE IN APLPHABET");
+               document.forms["reg"]["form-last-name"].focus();
+               return false;
+           }
+       }
+       
+     // email validation
+/*alert(apos);
+alert(dotpos);
+if(apos>-1&&dotpos>-1)
+    {
+        if(apos>1&&apos<maill)
+        {
+            maill=maill-3;
+                if(dotpos>maill)
+                {
+                    alert(". cant be at this position");
+                    return false;
+                }
+        }
+        else
+        {
+            alert("@ cant be at the begning or end");
+            return false;
+        }
+    }
+    else
+    {
+    alert("email should have atleast @ and .");
+    return false;
+    }*/
+    
+    // password verfication
+    
+    /*  if(pass === null || pass === '')
+       {
+           alert("PASSWORD CANNOT BE LEFT BLANK");
+           document.forms["reg"]["password"].focus();
+           return false;
+       }
+       if(pass.length<8)
+       {
+           alert("ALTEAST 8 CHARACTER REQURIED");
+           return false;
+       }
+       for(var i=0;i<lname.length;i++)
+       {   
+           var value=pass.charAt(i);
+           var cc=value.charCodeAt(0);
+           if((cc>47 && cc<58) || (cc>64 && cc <91)||(cc >96 && cc <123))
+           {
+               
+           }
+           else
+           {
+               alert("PASSWORD SHOULD ONLY BE ALPHA-NUMERIC");
+               document.forms["reg"]["password"].focus();
+               return false;
+           }
+       }*/
+       
+       // mobile no. validation
+       
+        if(mobile === null || mobile === '')
+       {
+           alert("PLEASE ENTER THE MOBILE NO.");
+           document.forms["reg"]["form-mobile"].focus();
+           return false;
+       }
+       
+       if(mobile.length!==10)
+       {
+           alert("ENTERED MOBILE NO. IS NOT 10 DIGIT");
+           document.forms["reg"]["form-mobile"].focus();
+           return false;
+       }
+       if(isNaN(mobile))
+       {
+           alert("ENTER THE MOBILE NO. IN STANDARD FORM");
+            document.forms["reg"]["form-mobile"].focus();
+           return false;
+           
+       }
+       
+       // address validation
+       
+       if(address===null || address==='')
+       {
+           alert("ADRESS CANNOT BE LEFT BLANK");
+           document.forms["reg"]["form-address"].focus();
+       }
+       
+       
+    }
+    
+     
+        </script>
+
+    </head>
+
+    <body >
+        <h><a href="start.jsp">WideGreenary</a></h>
+        <!-- Top content -->
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Sign Up Now</h3>
+                                    <p>Fill in the form below to get instant access:</p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-pencil"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form name="reg" action="register_to_database.jsp" onsubmit="return validate();" method="post" class="registration-form">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-first-name" align="center">First name</label>
+                                       <center> <input type="text" align="center" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name"></center>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-last-name" align="center">Last name</label>
+                                        <center><input type="text" align="center" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name"></center>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-email" align="center" >Email</label>
+                                        <center><input type="text" align="center" name="form-email" placeholder="@gmail.com" class="form-email form-control" id="form-email"></center>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-password" align="center">Password</label>
+                                       <center> <input type="password" name="password" placeholder="Password" class="form-email form-control" id="form-email"></center>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-mobile" align="center">Mobile-Number</label>
+                                        <center><input type="text" name="form-mobile" placeholder="Mobile-Number" class="form-email form-control" id="form-email"></center>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="form-address" align="center">Address</label>
+                                        <center><input type="text" name="form-address" placeholder="Address" class="form-email form-control" id="form-email"></center>
+                                    </div><br>                              
+                                   <center><button type="submit" class="btn">Sign me up!</button></center>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text">
+                            <ul class="nav navbar-nav navbar-right">
+                                <br><br><br><br><br><br>
+                        <li>
+                            <h3>
+                                Already have an account
+                            </h3>
+                            <a href="login.html">login here</a> 
+                          <!--  <h4>
+                                or register with: 
+                            </h4> 
+                            <br/>
+                            <span class="li-social icon" >
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-envelope"></i></a> 
+                                <a href="#"><i class="fa fa-skype"></i></a>
+                            </span> -->
+                        </li>
+                    </ul>
+                        </div>     
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </body>
+</html>
